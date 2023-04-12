@@ -10,6 +10,9 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+RUN apt-get update -y && apt-get install -y --no-install-recommends \
+    build-essential \
+
 # Copy the application files
 COPY . .
 
